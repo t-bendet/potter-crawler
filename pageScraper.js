@@ -1,10 +1,10 @@
 const scraperObject = {
-  url: "https://www.hp-lexicon.org/character/?letter=A",
-  async scraper(browser) {
+  url: `https://www.hp-lexicon.org/character/?letter=`,
+  async scraper(browser, char) {
     let page = await browser.newPage();
-    console.log(`Navigating to ${this.url}...`);
+    console.log(`Navigating to ${this.url}${char}...`);
     // Navigate to the selected page
-    await page.goto(this.url);
+    await page.goto(`${this.url}${char}`);
     // Wait for the required DOM to be rendered
     await page.waitForSelector("#content");
     // Get the link to all the required books
@@ -25,7 +25,8 @@ const scraperObject = {
                 "name",
                 p.childNodes[0].textContent
                   .trim()
-                  .replace(/(\r\n\t|\n|\r|\t)/gm, ""),
+                  .replace(/(\r\n\t|\n|\r|\t)/gm, "")
+                  .replace("Species / Race", "Species"),
               ];
             }
             //TODO  normalize obj ,no spaces or / inside keys
@@ -33,7 +34,9 @@ const scraperObject = {
               return [
                 p.childNodes[0].textContent
                   .trim()
-                  .replace(/(\r\n\t|\n|\r|\t)/gm, ""),
+                  .replace(/(\r\n\t|\n|\r|\t)/gm, "")
+                  .replace("Species / Race", "Species")
+                  .replace(" ", "_"),
                 p.childNodes[1].textContent
                   .trim()
                   .replace(/(\r\n\t|\n|\r|\t)/gm, ""),
