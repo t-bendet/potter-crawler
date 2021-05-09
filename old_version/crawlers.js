@@ -16,7 +16,6 @@ const charactersScraper = async (url) => {
   return data;
 };
 //*******************************places_Scraper************************************* */
-// TODO needs a lot of work for sorting the data
 const placesScraper = async (url) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -48,3 +47,4 @@ const spellsScraper = async (url) => {
   return data;
 };
 module.exports = { charactersScraper, placesScraper, spellsScraper };
+// TODO needs work on sorting the data
