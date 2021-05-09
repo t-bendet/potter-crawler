@@ -1,9 +1,11 @@
+require("./src/db/mongoose");
+
 const browserObject = require("./browser");
-// //characters
-// const scraperController = require("./characters/pageController");
+//characters
+const scraperController = require("./characters/pageController");
 
 //books
-const scraperController = require("./books/pageController");
+// const scraperController = require("./books/pageController");
 
 //Start the browser and create a browser instance
 let browserInstance = browserObject.startBrowser();

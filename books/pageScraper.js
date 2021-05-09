@@ -1,3 +1,5 @@
+const Book = require("../src/models/Book");
+
 const scraperObject = {
   async scraper(browser) {
     let counter = 1;
@@ -61,6 +63,12 @@ const scraperObject = {
     for (link in urls) {
       let currentPageData = await pagePromise(urls[link]);
       console.log(currentPageData);
+      const book = new Book(currentPageData);
+      try {
+        await book.save();
+      } catch (e) {
+        console.dir(e);
+      }
     }
   },
 };

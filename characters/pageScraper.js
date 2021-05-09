@@ -1,3 +1,5 @@
+const Character = require("../src/models/Character");
+
 const scraperObject = {
   url: `https://www.hp-lexicon.org/character/?letter=`,
   async scraper(browser, char) {
@@ -22,7 +24,7 @@ const scraperObject = {
           content.map((p, i) => {
             if (i === 0) {
               return [
-                "name",
+                "Name",
                 p.childNodes[0].textContent
                   .trim()
                   .replace(/(\r\n\t|\n|\r|\t)/gm, "")
@@ -50,10 +52,20 @@ const scraperObject = {
       });
 
     for (link in urls) {
-      let currentPageData = await pagePromise(urls[link]);
-      console.log(currentPageData);
+      try {
+        let currentPageData = await pagePromise(urls[link]);
+        console.log(currentPageData);
+        const character = new Character(currentPageData);
+        await character.save();
+      } catch (e) {
+        console.dir(e);
+      }
     }
   },
 };
 
 module.exports = scraperObject;
+
+//G stopped at Queenie Goldstein
+//P stopped at Jimmy Peakes
+//Z stopped at Zacharias Smith's father
