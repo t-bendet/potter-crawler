@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "crawl": "node crawler/index.js"
+    "crawl": "node crawler/index.js",
+    "heroku-postbuild": "npm install",
+    "start": "node src/index.js"
   },
   "author": "",
   "license": "ISC",
