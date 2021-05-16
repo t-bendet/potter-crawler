@@ -8,7 +8,10 @@ const browserObject = require("./browser");
 // const scraperController = require("../books/pageController");
 
 //creatures
-const scraperController = require("../creatures/pageController");
+// const scraperController = require("../creatures/pageController");
+
+//potions
+const scraperController = require("../potions/pageController");
 
 //Start the browser and create a browser instance
 let browserInstance = browserObject.startBrowser();

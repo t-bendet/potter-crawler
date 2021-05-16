@@ -1,10 +1,10 @@
-const Creature = require("../src/models/Creature");
+const Potion = require("../src/models/Potion");
 
 const scraperObject = {
-  url: `https://www.hp-lexicon.org/creature/?letter=`,
+  url: `https://www.hp-lexicon.org/magiccategory/potions/?letter=`,
   async scraper(browser, char) {
     let page = await browser.newPage();
-    console.log("creatures crawler...");
+    console.log("potions crawler...");
     console.log(`Navigating to ${this.url}${char}...`);
     // Navigate to the selected page
     await page.goto(`${this.url}${char}`);
@@ -23,12 +23,14 @@ const scraperObject = {
         const dataObj = {};
         try {
           const content = await newPage.$$eval(
-            ".article-body > .row > .col-md-8",
+            ".article-body > .row",
             (content) =>
-              content.map((x) => {
-                return x.childNodes[3].innerText;
+              content.map((p, i) => {
+                return p.children[0].innerText;
               })
           );
+
+          console.log(content, "content");
           const arr = link.split("/");
           dataObj[arr[arr.length - 2]] = content[0];
         } catch (e) {
@@ -44,8 +46,8 @@ const scraperObject = {
         for (const [key, value] of Object.entries(currentPageData)) {
           if (key && value) {
             console.log(currentPageData);
-            const creature = new Creature(currentPageData);
-            await creature.save();
+            const potion = new Potion(currentPageData);
+            await potion.save();
           } else {
             console.log("empty object");
           }
@@ -58,7 +60,3 @@ const scraperObject = {
 };
 
 module.exports = scraperObject;
-
-//G stopped at Queenie Goldstein
-//P stopped at Jimmy Peakes
-//Z stopped at Zacharias Smith's father

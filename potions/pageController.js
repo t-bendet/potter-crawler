@@ -10,13 +10,8 @@ async function scrapeAll(browserInstance) {
     "F",
     "G",
     "H",
-    "I",
-    "J",
-    "K",
     "L",
     "M",
-    "N",
-    "O",
     "P",
     "Q",
     "R",
@@ -25,8 +20,6 @@ async function scrapeAll(browserInstance) {
     "U",
     "V",
     "W",
-    "Y",
-    "Z",
   ];
   for (const element of upperCases) {
     try {
