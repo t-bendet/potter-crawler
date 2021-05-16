@@ -59,6 +59,11 @@ const scraperObject = {
       "https://www.hp-lexicon.org/source/the-harry-potter-novels/op/",
       "https://www.hp-lexicon.org/source/the-harry-potter-novels/hbp/",
       "https://www.hp-lexicon.org/source/the-harry-potter-novels/dh/",
+      "https://www.hp-lexicon.org/source/other-potter-books/qa/",
+      "https://www.hp-lexicon.org/source/other-potter-books/fb/",
+      "https://www.hp-lexicon.org/source/other-potter-books/tbb/",
+      "https://www.hp-lexicon.org/source/other-canon/bos/",
+      "https://www.hp-lexicon.org/source/other-canon/bop/",
     ];
     for (link in urls) {
       let currentPageData = await pagePromise(urls[link]);
@@ -75,4 +80,4 @@ const scraperObject = {
 
 module.exports = scraperObject;
 
-//TODO add book chapters
+//TODO add book chapters info and images

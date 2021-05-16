@@ -31,6 +31,9 @@ const bookSchema = new mongoose.Schema({
   Book_number: {
     type: Number,
   },
+  Description: {
+    type: String,
+  },
 });
 
 const Book = mongoose.model("Book", bookSchema);
