@@ -7,18 +7,18 @@ const router = new express.Router();
 router.get("/books", async (req, res) => {
   try {
     const books = await Book.find({});
-    res.status(201).send({ books });
+    res.status(200).send({ books });
   } catch (e) {
     res.status(400).send(e);
   }
 });
 
 // get a book by number
-router.get("/book/by_number/:Book_number", async (req, res) => {
+router.get("/books/by_number/:Book_number", async (req, res) => {
   const { Book_number } = req.params;
   try {
     const book = await Book.find({ Book_number });
-    res.status(201).send(book);
+    res.status(200).send(book);
   } catch (e) {
     res.status(400).send(e);
   }
@@ -26,11 +26,15 @@ router.get("/book/by_number/:Book_number", async (req, res) => {
 
 //get a book by name
 
-router.get("/book/by_name/:Book_Name", async (req, res) => {
+router.get("/books/:Book_Name", async (req, res) => {
   const { Book_Name } = req.params;
+  const query = {
+    Book_Name: { $regex: new RegExp(`^${Book_Name}$`), $options: "i" },
+  };
+
   try {
-    const book = await Book.find({ Book_Name });
-    res.status(201).send(book);
+    const book = await Book.find(query);
+    res.status(200).send(book);
   } catch (e) {
     res.status(400).send(e);
   }

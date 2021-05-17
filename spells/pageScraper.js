@@ -32,7 +32,8 @@ const scraperObject = {
 
           console.log(content, "content");
           const arr = link.split("/");
-          dataObj[arr[arr.length - 2]] = content[0];
+          dataObj["Name"] = arr[arr.length - 2];
+          dataObj["Description"] = content[0];
         } catch (e) {
           console.dir(e);
         }
@@ -51,6 +52,7 @@ const scraperObject = {
           } else {
             console.log("empty object");
           }
+          break;
         }
       } catch (e) {
         console.dir(e);

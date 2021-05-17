@@ -1,7 +1,10 @@
 const express = require("express");
 require("./db/mongoose");
-const bookRoute = require("./routers/book");
-const characterRoute = require("./routers/character");
+const booksRoute = require("./routers/books");
+const charactersRoute = require("./routers/characters");
+const spellsRoute = require("./routers/spells");
+const potionsRoute = require("./routers/potions");
+const creaturesRoute = require("./routers/creatures");
 
 const cors = require("cors");
 
@@ -10,8 +13,11 @@ const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
-app.use(bookRoute);
-app.use(characterRoute);
+app.use(booksRoute);
+app.use(charactersRoute);
+app.use(spellsRoute);
+app.use(potionsRoute);
+app.use(creaturesRoute);
 
 app.listen(port, () => {
   console.log("Server is up on port " + port);

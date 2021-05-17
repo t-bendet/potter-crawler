@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "c7610d56-3654-465e-87d6-db5175bb57d2",
+		"name": "potterCrawlerApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/books",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get book by number",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/books/by_number/5",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"books",
+						"by_number",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get book by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/books/Order of the Phoenix",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"books",
+						"Order of the Phoenix"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all characters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/characters",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a character by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/characters/harry Potter",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"characters",
+						"harry Potter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a character by Profession",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/characters/by_profession/auror",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"characters",
+						"by_profession",
+						"auror"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a character by family",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/characters/by_family/Longbottom family",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"characters",
+						"by_family",
+						"Longbottom family"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all potions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/potions",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"potions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a potion by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/potions/ageing-potion",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"potions",
+						"ageing-potion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all spells",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/spells",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"spells"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a spell by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/spells/anti-cheating-spellcharms",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"spells",
+						"anti-cheating-spellcharms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all creatures",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/creatures",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"creatures"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a creature by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/creatures/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"creatures",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

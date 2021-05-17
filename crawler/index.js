@@ -14,7 +14,7 @@ const browserObject = require("./browser");
 // const scraperController = require("../potions/pageController");
 
 //spells
-const scraperController = require("../spells/pageController");
+// const scraperController = require("../spells/pageController");
 
 //Start the browser and create a browser instance
 let browserInstance = browserObject.startBrowser();
