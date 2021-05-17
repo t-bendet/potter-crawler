@@ -26,7 +26,7 @@ const scraperObject = {
             ".article-body > .row",
             (content) =>
               content.map((p, i) => {
-                return p.children[0].innerText;
+                return p.children[0].children[1].innerText;
               })
           );
 
