@@ -13,7 +13,7 @@ router.get("/potions", async (req, res) => {
   }
 });
 
-//get a book by name
+//get a potion by name
 
 router.get("/potions/:Name", async (req, res) => {
   const { Name } = req.params;
@@ -23,7 +23,7 @@ router.get("/potions/:Name", async (req, res) => {
   };
 
   try {
-    const spell = await Potion.find(query);
+    const spell = await Potion.findOne(query);
     res.status(200).send(spell);
   } catch (e) {
     res.status(400).send(e);

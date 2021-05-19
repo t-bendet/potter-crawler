@@ -18,7 +18,7 @@ router.get("/characters/:Name", async (req, res) => {
   const query = { Name: { $regex: new RegExp(`^${Name}$`), $options: "i" } };
 
   try {
-    const character = await Character.find(query);
+    const character = await Character.findOne(query);
     res.status(200).send(character);
   } catch (e) {
     res.status(400).send(e);
@@ -32,7 +32,7 @@ router.get("/characters/by_profession/:Profession", async (req, res) => {
     Profession: { $regex: new RegExp(`^${Profession}$`), $options: "i" },
   };
   try {
-    const character = await Character.find(query);
+    const character = await Character.findOne(query);
     res.status(200).send(character);
   } catch (e) {
     res.status(400).send(e);
@@ -47,7 +47,7 @@ router.get("/characters/by_family/:Family_Groups", async (req, res) => {
   };
 
   try {
-    const character = await Character.find(query);
+    const character = await Character.findOne(query);
     res.status(200).send(character);
   } catch (e) {
     res.status(400).send(e);

@@ -13,7 +13,7 @@ router.get("/creatures", async (req, res) => {
   }
 });
 
-//get a book by name
+//get a creature by name
 
 router.get("/creatures/:Name", async (req, res) => {
   const { Name } = req.params;
@@ -22,7 +22,7 @@ router.get("/creatures/:Name", async (req, res) => {
   };
 
   try {
-    const spell = await Creature.find(query);
+    const spell = await Creature.findOne(query);
     res.status(200).send(spell);
   } catch (e) {
     res.status(400).send(e);

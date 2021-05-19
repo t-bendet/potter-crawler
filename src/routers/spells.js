@@ -13,7 +13,7 @@ router.get("/spells", async (req, res) => {
   }
 });
 
-//get a book by name
+//get a spell by name
 
 router.get("/spells/:Name", async (req, res) => {
   const { Name } = req.params;
@@ -22,7 +22,7 @@ router.get("/spells/:Name", async (req, res) => {
   };
 
   try {
-    const spell = await Spell.find(query);
+    const spell = await Spell.findOne(query);
     res.status(200).send(spell);
   } catch (e) {
     res.status(400).send(e);
